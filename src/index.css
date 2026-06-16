@@ -1,0 +1,321 @@
+/* ─── GLOBAL RESET & BASE ───────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, svg {
+  max-width: 100%;
+}
+
+/* ─── APP SHELL ──────────────────────────────────────────────────────────── */
+.app-shell {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f8fafc;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────────────────── */
+.app-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.app-nav {
+  display: flex;
+  gap: 2px;
+  margin-left: 12px;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.app-nav::-webkit-scrollbar { display: none; }
+
+.app-nav-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: all .15s;
+  flex-shrink: 0;
+}
+
+.app-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.app-currency-select {
+  padding: 5px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: inherit;
+  background: #fff;
+}
+
+.app-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-user-text { font-size: 12px; }
+
+.hamburger-btn {
+  display: none;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ─── MOBILE NAV DRAWER ──────────────────────────────────────────────────── */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 90;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  max-width: 80vw;
+  background: #fff;
+  z-index: 91;
+  padding: 16px;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.mobile-nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+/* ─── BODY / CONTENT ─────────────────────────────────────────────────────── */
+.app-body {
+  padding: 24px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.page-subtitle {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* ─── RESPONSIVE GRIDS ───────────────────────────────────────────────────── */
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.grid-form-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+/* ─── TABLE WRAPPER (horizontal scroll on small screens) ────────────────── */
+.table-wrap {
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrap table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+/* ─── TOOLBAR (search / filters) ─────────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.toolbar input,
+.toolbar select {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.toolbar input[type="text"],
+.toolbar input[type="search"] {
+  flex: 1;
+  min-width: 160px;
+}
+
+/* ─── RESPONSIVE BREAKPOINTS ─────────────────────────────────────────────── */
+@media (max-width: 980px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-body {
+    padding: 16px;
+  }
+
+  .app-user-text {
+    display: none;
+  }
+
+  .app-currency-select {
+    display: none;
+  }
+
+  .grid-form-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-header {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .app-logo > div:last-child {
+    display: none;
+  }
+
+  .grid-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .page-title {
+    font-size: 17px;
+  }
+
+  .app-body {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid-stats,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
