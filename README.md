@@ -1,32 +1,35 @@
 # ApexHR
 
-A single-page HR management dashboard built with React.
+ApexHR is an HR management system built to help businesses manage employees, attendance, leave, and internal operations efficiently.
 
-## Structure
+## Live Demo
+[View Live Project](https://itxhadi27-cmd.github.io/ApexHR/)
 
-```
-apex-hr/
-├── index.html          # Vite entry HTML
-├── package.json
-├── vite.config.ts
-├── tsconfig.json
-└── src/
-    ├── main.tsx         # React root entry
-    └── App.tsx          # Main application (dashboard, employees, payroll, leave, attendance, reports, settings)
-```
+## Overview
+ApexHR is built as a modern HR dashboard for handling employee records, HR workflows, and team management in a clean and professional interface.
 
-## Run locally
+## Features
+- Employee management
+- Attendance tracking
+- Leave requests
+- Performance overview
+- Team directory
+- HR dashboard
+- Role-based sections
+- Clean admin-style interface
 
-```bash
-npm install
-npm run dev
-```
+## Tech Stack
+- HTML
+- CSS
+- JavaScript
+- TypeScript
+- React
+- Responsive Design
 
-Then open the printed local URL in your browser.
 
-## Build
+## Purpose
+This project shows that I can build business-focused applications with practical user flows and structured UI design.
 
-```bash
-npm run build
-npm run preview
-```
+
+## Author
+Maqsood Ahmed
